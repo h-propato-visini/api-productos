@@ -1,11 +1,9 @@
-var express = require('express');
-var router = express.Router();
-const UserController = require('../controllers/UserController')
-const UserInstance = new UserController()
+const express = require('express');
+const router = express.Router();
+const ProductController = require('../controllers/ProductController')
+const ProductInstance = new ProductController()
 
 /* GET home page. */
-router.get('/', (req, res) => UserInstance.getUser(req, res));
-router.get('/product', (req,res) => UserInstance.getProduct(req,res));
-router.get('/product/:category', (req,res) => UserInstance.getProductByCat(req,res));
+router.get('/product/:category', (req,res) => ProductInstance.getProductByCat(req,res));
 
 module.exports = router;
